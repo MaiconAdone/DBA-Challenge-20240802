@@ -9,3 +9,6 @@ Liguagem SQL
 2. execute o arquivo cria_as_tabelas no (SGBD), a modelagem está de acordo com as orientações da imagem enviada para o Modelo de Dados.
 3. Popule as tabelas executando o arquivo popula_as_tabelas (dados fictícios para poder executar as solicitações).
 4. Execute as respostas no arquivo respostas.
+
+
+This is a challenge by Coodesh.
