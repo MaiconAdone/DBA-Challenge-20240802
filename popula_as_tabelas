@@ -1,52 +1,99 @@
--- Inserindo dados na tabela brands
-INSERT INTO brands (brand_id, brand_name) VALUES
-(1, 'Trek'),
-(2, 'Specialized'),
-(3, 'Giant'),
-(4, 'Cannondale');
+-- Inserir dados na tabela customers
+INSERT INTO customers (first_name, last_name, phone, email, street, city, state, zip_code) VALUES
+('John', 'Doe', '123-456-7890', 'john.doe@example.com', '123 Elm St', 'Springfield', 'IL', '62701'),
+('Jane', 'Smith', '987-654-3210', 'jane.smith@example.com', '456 Oak St', 'Springfield', 'IL', '62702'),
+('Alice', 'Johnson', '555-123-4567', 'alice.johnson@example.com', '789 Pine St', 'Springfield', 'IL', '62703'),
+('Bob', 'Brown', '555-987-6543', 'bob.brown@example.com', '321 Maple St', 'Springfield', 'IL', '62704'),
+('Charlie', 'Davis', '555-543-2167', 'charlie.davis@example.com', '654 Birch St', 'Springfield', 'IL', '62705'),
+('Emily', 'Wilson', '555-123-6547', 'emily.wilson@example.com', '987 Cedar St', 'Springfield', 'IL', '62706'),
+('Michael', 'Miller', '555-789-1234', 'michael.miller@example.com', '258 Fir St', 'Springfield', 'IL', '62707'),
+('Elizabeth', 'Garcia', '555-321-7890', 'elizabeth.garcia@example.com', '369 Walnut St', 'Springfield', 'IL', '62708'),
+('James', 'Martinez', '555-654-3210', 'james.martinez@example.com', '147 Cherry St', 'Springfield', 'IL', '62709'),
+('Patricia', 'Anderson', '555-246-1357', 'patricia.anderson@example.com', '258 Spruce St', 'Springfield', 'IL', '62710');
 
--- Inserindo dados na tabela categories
-INSERT INTO categories (category_id, category_name) VALUES
-(1, 'Mountain Bikes'),
-(2, 'Road Bikes'),
-(3, 'Hybrid Bikes');
+-- Inserir dados na tabela staffs
+INSERT INTO staffs (first_name, last_name, email, phone, active, store_id, manager_id) VALUES
+('Alice', 'Walker', 'alice.walker@example.com', '555-111-2222', 1, 1, NULL),
+('David', 'Lee', 'david.lee@example.com', '555-222-3333', 1, 1, 1),
+('Susan', 'Taylor', 'susan.taylor@example.com', '555-333-4444', 1, 1, 1),
+('Brian', 'Hernandez', 'brian.hernandez@example.com', '555-444-5555', 1, 2, 2),
+('Jessica', 'Lopez', 'jessica.lopez@example.com', '555-555-6666', 1, 2, 2),
+('Daniel', 'Clark', 'daniel.clark@example.com', '555-666-7777', 1, 2, 1),
+('Nancy', 'Robinson', 'nancy.robinson@example.com', '555-777-8888', 1, 3, NULL),
+('Daniel', 'Hall', 'daniel.hall@example.com', '555-888-9999', 1, 3, 3),
+('Laura', 'Young', 'laura.young@example.com', '555-999-0000', 1, 3, 2),
+('Paul', 'Wright', 'paul.wright@example.com', '555-123-3210', 1, 1, NULL);
 
--- Inserindo dados na tabela products
-INSERT INTO products (product_id, product_name, brand_id, category_id, model_year, list_price) VALUES
-(1, 'Trek 520', 1, 1, 2021, 1499.99),
-(2, 'Specialized Roubaix', 2, 2, 2021, 2499.99),
-(3, 'Giant Escape 3', 3, 3, 2021, 599.99),
-(4, 'Cannondale Trail 8', 4, 1, 2022, 499.99);
+-- Inserir dados na tabela orders
+INSERT INTO orders (customer_id, order_status, order_date, required_date, shipped_date, store_id, staff_id) VALUES
+(1, 'Shipped', '2024-10-01', '2024-10-05', '2024-10-03', 1, 1),
+(2, 'Pending', '2024-10-02', '2024-10-06', NULL, 1, 2),
+(3, 'Cancelled', '2024-10-03', '2024-10-07', NULL, 1, 3),
+(4, 'Shipped', '2024-10-04', '2024-10-08', '2024-10-05', 2, 1),
+(5, 'Pending', '2024-10-05', '2024-10-09', NULL, 2, 2),
+(6, 'Shipped', '2024-10-06', '2024-10-10', '2024-10-08', 2, 3),
+(7, 'Pending', '2024-10-07', '2024-10-11', NULL, 3, 1),
+(8, 'Shipped', '2024-10-08', '2024-10-12', '2024-10-09', 3, 2),
+(9, 'Cancelled', '2024-10-09', '2024-10-13', NULL, 3, 3),
+(10, 'Shipped', '2024-10-10', '2024-10-14', '2024-10-12', 1, 1);
 
--- Inserindo dados na tabela stores
-INSERT INTO stores (store_id, store_name, phone, email, street, city, state, zip_code) VALUES
-(1, 'Main St. Bikes', '555-1234', 'info@mainstbikes.com', '123 Main St', 'Springfield', 'IL', '62701'),
-(2, 'Downtown Cycles', '555-5678', 'contact@downtowncycles.com', '456 Market St', 'Springfield', 'IL', '62702');
+-- Inserir dados na tabela stores
+INSERT INTO stores (store_name, phone, email, street, city, state, zip_code) VALUES
+('Store 1', '555-000-1111', 'store1@example.com', '1001 Main St', 'Springfield', 'IL', '62701'),
+('Store 2', '555-000-2222', 'store2@example.com', '1002 Main St', 'Springfield', 'IL', '62702'),
+('Store 3', '555-000-3333', 'store3@example.com', '1003 Main St', 'Springfield', 'IL', '62703');
 
--- Inserindo dados na tabela customers
-INSERT INTO customers (customer_id, first_name, last_name, phone, email, street, city, state, zip_code) VALUES
-(1, 'John', 'Doe', '555-1111', 'john.doe@example.com', '789 Elm St', 'Springfield', 'IL', '62703'),
-(2, 'Jane', 'Smith', '555-2222', 'jane.smith@example.com', '321 Oak St', 'Springfield', 'IL', '62704');
-
--- Inserindo dados na tabela staffs
-INSERT INTO staffs (staff_id, first_name, last_name, email, phone, active, store_id, manager_id) VALUES
-(1, 'Alice', 'Johnson', 'alice.johnson@example.com', '555-3333', TRUE, 1, NULL),
-(2, 'Bob', 'Williams', 'bob.williams@example.com', '555-4444', TRUE, 2, 1);
-
--- Inserindo dados na tabela orders
-INSERT INTO orders (order_id, customer_id, order_status, order_date, required_date, shipped_date, store_id, staff_id) VALUES
-(1, 1, 'Shipped', '2024-10-01', '2024-10-05', '2024-10-03', 1, 1),
-(2, 2, 'Pending', '2024-10-02', '2024-10-06', NULL, 2, 2);
-
--- Inserindo dados na tabela order_items
+-- Inserir dados na tabela order_items
 INSERT INTO order_items (order_id, item_id, product_id, quantity, list_price, discount) VALUES
-(1, 1, 1, 1, 1499.99, 0.00),
-(1, 2, 4, 2, 499.99, 10.00),
-(2, 1, 2, 1, 2499.99, 0.00);
+(1, 1, 1, 1, 19.99, 0),
+(1, 2, 2, 2, 39.99, 5),
+(2, 1, 3, 1, 29.99, 0),
+(2, 2, 1, 1, 19.99, 10),
+(3, 1, 4, 2, 49.99, 0),
+(4, 1, 2, 1, 39.99, 5),
+(4, 2, 3, 2, 29.99, 0),
+(5, 1, 1, 1, 19.99, 0),
+(5, 2, 4, 1, 49.99, 5),
+(6, 1, 2, 2, 39.99, 10);
 
--- Inserindo dados na tabela stocks
+-- Inserir dados na tabela categories
+INSERT INTO categories (category_name) VALUES
+('Bikes'),
+('Accessories'),
+('Clothing'),
+('Components'),
+('Footwear');
+
+-- Inserir dados na tabela products
+INSERT INTO products (product_name, brand_id, category_id, model_year, list_price) VALUES
+('Mountain Bike', 1, 1, 2023, 499.99),
+('Road Bike', 1, 1, 2023, 599.99),
+('Hybrid Bike', 1, 1, 2023, 399.99),
+('Helmet', 2, 2, 2023, 59.99),
+('Gloves', 2, 2, 2023, 19.99),
+('T-Shirt', 3, 3, 2023, 29.99),
+('Shorts', 3, 3, 2023, 34.99),
+('Pedals', 4, 4, 2023, 49.99),
+('Brake Pads', 4, 4, 2023, 15.99),
+('Water Bottle', 5, 2, 2023, 9.99);
+
+-- Inserir dados na tabela stocks
 INSERT INTO stocks (store_id, product_id, quantity) VALUES
 (1, 1, 10),
-(1, 2, 5),
-(2, 3, 15),
-(2, 4, 8);
+(1, 2, 15),
+(1, 3, 5),
+(2, 1, 20),
+(2, 4, 25),
+(2, 5, 30),
+(3, 1, 8),
+(3, 6, 12),
+(3, 7, 5),
+(1, 8, 20);
+
+-- Inserir dados na tabela brands
+INSERT INTO brands (brand_name) VALUES
+('Brand A'),
+('Brand B'),
+('Brand C'),
+('Brand D'),
+('Brand E');
