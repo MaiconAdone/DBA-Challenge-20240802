@@ -1,0 +1,15 @@
+# Ignorar arquivos de log
+*.log
+
+# Ignorar arquivos de ambiente
+.env
+
+# Ignorar diretórios de compilação
+node_modules/
+dist/
+
+# Ignorar arquivos temporários de editor
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
